@@ -13,27 +13,28 @@
     </nav>
 
     <section id="about">
-        <h2>Резюме</h2>
-        <p>Короткий опис.</p>
-        <img src="path/to/your/image.jpg" alt="Моє фото">
+        <h2>Про себе</h2>
+        <p>Данилюк Олександр 19 років. Cтудент ПНУ .</p>
+        <img src="{{ url_for('static', filename='images/my_photo.jpeg') }}" alt="Моє фото" class="img">
     </section>
     
     <section id="education">
         <h2>Освіта</h2>
-        <p>Опис  освіти.</p>
+        <p>Повна середня.</p>
+        <p>Бакалавр, Інженерія Програмного Забезпечення</p>
     </section>
     
     <section id="skills">
         <h2>Навички</h2>
         <ul>
-            <li>Навичка 1</li>
-            <li>Навичка 2</li>
-            <li>Навичка 3</li>
+            <li>Вивчаю Spring Boot</li>
+            <li>Вивчаю python + flask</li>
+        
         </ul>
     </section>
     
     <section id="experience">
-        <h2>Досвід роботи</h2>
-        <p>Опис досвіду роботи або проекти, в яких брали участь.</p>
+        <h2>Навчаюсь в ПНУ, працюю над проектом</h2>
+        <p>.</p>
     </section>
 {% endblock %}
