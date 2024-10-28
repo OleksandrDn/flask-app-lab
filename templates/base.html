@@ -9,22 +9,14 @@
 
     <header>
         <h1>Мій сайт</h1>
-        <nav>
-            <ul>
-                <li><a href="{{ url_for('main') }}">Головна</a></li>
-                <li><a href="{{ url_for('resume') }}">Резюме</a></li>
-                <li><a href="{{ url_for('get_posts') }}">Блог</a></li>
-            </ul>
-        </nav>
+        {% include "navigation.html" %}
     </header>
 
     <main>
         {% block content %}{% endblock %}
     </main>
 
-    <footer>
-        <p>&copy; 2024 Мій сайт</p>
-    </footer>
+    {% include "footer.html" %}
 
 </body>
 </html>
