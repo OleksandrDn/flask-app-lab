@@ -3,7 +3,7 @@
 /* Загальні стилі */
 body {
     font-family: 'Roboto', sans-serif; /* Сучасний шрифт */
-    background-color: #eef2f3; /* Світло-сірий фон */
+    background-color: #414546; /* Світло-сірий фон */
     margin: 0;
     padding: 0;
 }
@@ -32,9 +32,9 @@ h2 {
 section {
     margin-bottom: 30px;
     padding: 30px;
-    background-color: #fff; /* Білий фон для секцій */
+    background-color: #ffffff; /* Білий фон для секцій */
     border-radius: 10px; /* Закруглені кути */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Легка тінь для секцій */
+    box-shadow: 0 8px 16px rgba(238, 7, 7, 0.1); /* Легка тінь для секцій */
 }
 
 /* Стиль для навігаційного меню */
@@ -98,4 +98,18 @@ footer {
     margin-top: 20px; /* Відступ зверху */
     font-size: 0.9rem; /* Менший розмір шрифту для футера */
     color: #666; /* Темно-сірий колір тексту */
+}
+
+
+
+
+body {
+    background-color: #333;
+    color: #fff;
+}
+
+
+body {
+    background-color: #fff;
+    color: #000;
 }

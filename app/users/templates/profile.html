@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Профіль{% endblock %}
+
+{% block content %}
+    <h2>Привіт, {{ username }}!</h2>
+
+    <!-- Форма для додавання/видалення куків -->
+    <h3>Управління куками</h3>
+    <form method="POST">
+        <input type="text" name="cookie_key" placeholder="Ключ кукі">
+        <input type="text" name="cookie_value" placeholder="Значення кукі">
+        <input type="number" name="expires" placeholder="Термін дії (в секундах)">
+        <button type="submit" name="action" value="add" class="btn btn-success">Додати кукі</button>
+    </form>
+
+    <h3>Тема</h3>
+    <a href="{{ url_for('users.set_theme', theme='dark') }}" class="btn btn-dark">Темна тема</a>
+    <a href="{{ url_for('users.set_theme', theme='light') }}" class="btn btn-light">Світла тема</a>
+
+    <h3>Збережені кукі</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Ключ</th>
+                <th>Значення</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for key, value in cookies.items() %}
+                <tr>
+                    <td>{{ key }}</td>
+                    <td>{{ value }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
