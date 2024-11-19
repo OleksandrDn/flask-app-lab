@@ -1,15 +1,41 @@
 {% extends 'base.html' %}
 
-{% block title %} POSTS {% endblock %}
+{% block title %}POSTS{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/posts.css') }}">
+{% endblock %}
 
 {% block content %}
 
-<h1>Articles</h1>
-    
+<h1 class="myclass">Articles</h1>
+
+<div class="container mt-5">
+    <form action="{{ url_for('.add_post') }}" class="mb-4">
+        <button type="submit" class="btn btn-primary">Add post</button>
+    </form>
+
+    <div class="row">
+        {% for post in posts %}
+        <div class="col-md-4 mb-3">
+            <div class="card h-100">
+                <img src="{{ post.get('image_url', url_for('static', filename='images/python.jpg')) }}" 
+                     class="card-img-top" alt="Post Image">
+                <div class="card-body">
+                    <h5 class="card-title">{{ post["title"] | title }}</h5>
+                    <p class="card-text">Post ID: {{ post["id"] }}</p>
+                    <p class="card-text">{{ post["content"] | truncate(23) }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
 <ul>
-    {% for post in posts%}
-        <li> {{post["id"]}} -  
-            <a href="post/{{post['id']}}">{{post["title"]}}</a>
+    {% for post in posts %}
+        <li>{{ post["id"] }} -  
+            <a href="{{ url_for('posts.detail_post', id=post['id']) }}">{{ post["title"] }}</a>
         </li>
     {% endfor %}
 </ul>

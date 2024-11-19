@@ -7,6 +7,10 @@
     <title>{% block title %} {% endblock %} - FlaskApp</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    {% block css %}{% endblock %}
+
+
 </head>
 
 <body class="{% if request.cookies.get('theme') == 'dark' %}bg-dark text-dark{% else %}bg-light text-dark{% endif %}">
